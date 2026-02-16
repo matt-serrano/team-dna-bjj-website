@@ -30,13 +30,13 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <nav className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="flex h-16 lg:h-20 items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
             <div className="flex flex-col items-center">
               <span className="text-2xl lg:text-3xl font-bold tracking-tight">TEAM DNA BJJ</span>
-              <span className="text-xs text-muted-foreground tracking-[0.35em]">IT'S IN OUR GENES</span>
+              <span className="text-[10px] sm:text-xs text-muted-foreground tracking-[0.25em] sm:tracking-[0.35em]">IT'S IN OUR GENES</span>
             </div>
           </Link>
 
@@ -136,7 +136,7 @@ export function Header() {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="lg:hidden border-t border-border py-4 space-y-2">
+          <div className="lg:hidden absolute left-0 right-0 top-full bg-background/95 backdrop-blur border-b border-border py-4 space-y-2 shadow-lg z-50">
             {/* Programs Section */}
             <div className="space-y-1">
               <div className="px-4 py-2 text-sm font-semibold text-muted-foreground">

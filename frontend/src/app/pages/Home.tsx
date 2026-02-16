@@ -127,39 +127,41 @@ export function Home() {
         {/* Background gradient */}
         <div className="absolute inset-0 bg-gradient-to-br from-[var(--accent-primary)]/10 via-background to-background -z-10" />
         
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="container mx-auto px-6 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-32">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="space-y-8"
+              className="space-y-5 sm:space-y-8"
             >
-              <div className="space-y-4">
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight">
-                  Build Confidence.
-                  <br />
-                  <span className="text-[var(--accent-primary)]">Train With Purpose.</span>
+              <div className="space-y-4 sm:space-y-6">
+                <h1 className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-[1.1]">
+                  <span className="block">Build Confidence.</span>
+                  <span className="block mt-1 sm:mt-2 bg-gradient-to-r from-[var(--accent-primary)] via-cyan-400 to-[var(--accent-primary)] bg-clip-text text-transparent bg-[length:200%_auto] animate-[gradient_3s_linear_infinite]">
+                    Train With Purpose.
+                  </span>
                 </h1>
-                <p className="text-lg sm:text-xl text-muted-foreground max-w-xl">
+                <p className="text-sm sm:text-xl text-muted-foreground max-w-xl leading-relaxed">
                   Discover Brazilian Jiu-Jitsu at Whitby's premier training facility. 
                   Build fitness, confidence, and self-defense skills in a welcoming community.
                 </p>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-row gap-3 sm:gap-4">
                 <Button 
-                  size="lg" 
+                  size="md" 
                   onClick={() => setTrialModalOpen(true)}
-                  className="group"
+                  className="group text-xs sm:text-base px-3 py-2 sm:px-6 sm:py-3"
                 >
                   Book a Free Trial
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-3.5 h-3.5 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
                 <Button 
-                  size="lg" 
+                  size="md" 
                   variant="outline"
                   onClick={() => window.location.href = '/schedule'}
+                  className="text-xs sm:text-base px-3 py-2 sm:px-6 sm:py-3"
                 >
                   View Schedule
                 </Button>
@@ -176,7 +178,7 @@ export function Home() {
                 <img
                   src="https://images.unsplash.com/photo-1542937307-973ad1f0b10f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxicmF6aWxpYW4lMjBqaXUlMjBqaXRzdSUyMHRyYWluaW5nfGVufDF8fHx8MTc3MDgyMTkwMXww&ixlib=rb-4.1.0&q=80&w=1080"
                   alt="BJJ Training"
-                  className="w-full h-[400px] lg:h-[600px] object-cover"
+                  className="w-full h-[280px] sm:h-[350px] lg:h-[600px] object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
               </div>
@@ -187,8 +189,8 @@ export function Home() {
 
       {/* Social Proof Bar */}
       <section className="border-y border-border bg-muted/30">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        <div className="container mx-auto px-6 sm:px-6 lg:px-8 py-5 sm:py-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
             {[
               { icon: Users, label: 'Beginner Friendly' },
               { icon: Users, label: 'Kids Programs' },
@@ -205,23 +207,23 @@ export function Home() {
       </section>
 
       {/* Programs Grid */}
-      <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
+      <section className="container mx-auto px-6 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-32">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center max-w-3xl mx-auto mb-16"
+          className="text-center max-w-3xl mx-auto mb-8 sm:mb-12 lg:mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">
             Choose Your Program
           </h2>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-sm sm:text-lg text-muted-foreground">
             We offer specialized programs for every age and skill level
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
           {programs.map((program, i) => (
             <motion.div
               key={i}
@@ -239,13 +241,13 @@ export function Home() {
                   />
                 </div>
                 <CardHeader>
-                  <h3 className="text-xl font-bold mb-2">{program.title}</h3>
+                  <h3 className="text-lg sm:text-xl font-bold mb-2">{program.title}</h3>
                   <p className="text-sm text-muted-foreground">
                     {program.description}
                   </p>
                 </CardHeader>
                 <CardContent className="flex-1 flex flex-col">
-                  <ul className="space-y-2 mb-6 flex-1">
+                  <ul className="space-y-1.5 sm:space-y-2 mb-4 sm:mb-6 flex-1">
                     {program.benefits.map((benefit, j) => (
                       <li key={j} className="flex items-start gap-2 text-sm">
                         <CheckCircle className="w-4 h-4 text-[var(--accent-primary)] flex-shrink-0 mt-0.5" />
@@ -254,7 +256,7 @@ export function Home() {
                     ))}
                   </ul>
                   <Link to={program.path}>
-                    <Button variant="outline" className="w-full">
+                    <Button variant="outline" className="w-full text-sm">
                       Explore Program
                     </Button>
                   </Link>
@@ -266,24 +268,24 @@ export function Home() {
       </section>
 
       {/* Why DNA BJJ */}
-      <section className="bg-muted/30 py-20 lg:py-32">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="bg-muted/30 py-12 sm:py-16 lg:py-32">
+        <div className="container mx-auto px-6 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center max-w-3xl mx-auto mb-16"
+            className="text-center max-w-3xl mx-auto mb-8 sm:mb-12 lg:mb-16"
           >
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">
               Why Train at Team DNA BJJ?
             </h2>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-sm sm:text-lg text-muted-foreground">
               More than just a gym – we're a community dedicated to your growth
             </p>
           </motion.div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             {benefits.map((benefit, i) => (
               <motion.div
                 key={i}
@@ -294,11 +296,11 @@ export function Home() {
               >
                 <Card className="h-full">
                   <CardHeader>
-                    <div className="w-12 h-12 rounded-xl bg-[var(--accent-primary)]/10 flex items-center justify-center mb-4">
-                      <benefit.icon className="w-6 h-6 text-[var(--accent-primary)]" />
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-[var(--accent-primary)]/10 flex items-center justify-center mb-3 sm:mb-4">
+                      <benefit.icon className="w-5 h-5 sm:w-6 sm:h-6 text-[var(--accent-primary)]" />
                     </div>
-                    <h3 className="text-xl font-bold mb-2">{benefit.title}</h3>
-                    <p className="text-muted-foreground">{benefit.description}</p>
+                    <h3 className="text-base sm:text-xl font-bold mb-2">{benefit.title}</h3>
+                    <p className="text-sm sm:text-base text-muted-foreground">{benefit.description}</p>
                   </CardHeader>
                 </Card>
               </motion.div>
@@ -308,23 +310,23 @@ export function Home() {
       </section>
 
       {/* How It Works */}
-      <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
+      <section className="container mx-auto px-6 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-32">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center max-w-3xl mx-auto mb-16"
+          className="text-center max-w-3xl mx-auto mb-8 sm:mb-12 lg:mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">
             Getting Started is Easy
           </h2>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-sm sm:text-lg text-muted-foreground">
             Three simple steps to begin your BJJ journey
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 lg:gap-12">
           {[
             {
               number: '01',
@@ -351,11 +353,11 @@ export function Home() {
               className="relative"
             >
               <div className="text-center">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-[var(--accent-primary)] text-white text-2xl font-bold mb-6">
+                <div className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-[var(--accent-primary)] text-white text-xl sm:text-2xl font-bold mb-4 sm:mb-6">
                   {step.number}
                 </div>
-                <h3 className="text-2xl font-bold mb-4">{step.title}</h3>
-                <p className="text-muted-foreground">{step.description}</p>
+                <h3 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-4">{step.title}</h3>
+                <p className="text-sm sm:text-base text-muted-foreground">{step.description}</p>
               </div>
               {i < 2 && (
                 <div className="hidden md:block absolute top-8 left-full w-full h-0.5 bg-border -z-10" />
@@ -364,32 +366,32 @@ export function Home() {
           ))}
         </div>
 
-        <div className="text-center mt-12">
-          <Button size="lg" onClick={() => setTrialModalOpen(true)}>
+        <div className="text-center mt-8 sm:mt-12">
+          <Button size="md" onClick={() => setTrialModalOpen(true)} className="text-xs sm:text-base px-3 py-2 sm:px-6 sm:py-3">
             Start Your Journey Today
           </Button>
         </div>
       </section>
 
       {/* Testimonials */}
-      <section className="bg-muted/30 py-20 lg:py-32">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="bg-muted/30 py-12 sm:py-16 lg:py-32">
+        <div className="container mx-auto px-6 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center max-w-3xl mx-auto mb-16"
+            className="text-center max-w-3xl mx-auto mb-8 sm:mb-12 lg:mb-16"
           >
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">
               What Our Students Say
             </h2>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-sm sm:text-lg text-muted-foreground">
               Real results from real students
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             {testimonials.map((testimonial, i) => (
               <motion.div
                 key={i}
@@ -400,16 +402,16 @@ export function Home() {
               >
                 <Card className="h-full">
                   <CardHeader>
-                    <Quote className="w-10 h-10 text-[var(--accent-primary)]/20 mb-4" />
-                    <div className="flex gap-1 mb-4">
+                    <Quote className="w-8 h-8 sm:w-10 sm:h-10 text-[var(--accent-primary)]/20 mb-3 sm:mb-4" />
+                    <div className="flex gap-1 mb-3 sm:mb-4">
                       {[...Array(testimonial.rating)].map((_, j) => (
-                        <Star key={j} className="w-4 h-4 fill-[var(--accent-primary)] text-[var(--accent-primary)]" />
+                        <Star key={j} className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-[var(--accent-primary)] text-[var(--accent-primary)]" />
                       ))}
                     </div>
-                    <p className="text-muted-foreground mb-6">"{testimonial.text}"</p>
+                    <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6">"{testimonial.text}"</p>
                     <div>
-                      <p className="font-semibold">{testimonial.name}</p>
-                      <p className="text-sm text-muted-foreground">{testimonial.program}</p>
+                      <p className="text-sm sm:text-base font-semibold">{testimonial.name}</p>
+                      <p className="text-xs sm:text-sm text-muted-foreground">{testimonial.program}</p>
                     </div>
                   </CardHeader>
                 </Card>
@@ -420,18 +422,18 @@ export function Home() {
       </section>
 
       {/* FAQ Preview */}
-      <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
+      <section className="container mx-auto px-6 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-32">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center max-w-3xl mx-auto mb-16"
+          className="text-center max-w-3xl mx-auto mb-8 sm:mb-12 lg:mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">
             Frequently Asked Questions
           </h2>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-sm sm:text-lg text-muted-foreground">
             Got questions? We've got answers.
           </p>
         </motion.div>
@@ -441,10 +443,10 @@ export function Home() {
             {faqs.map((faq, i) => (
               <Accordion.Item key={i} value={`item-${i}`}>
                 <Card>
-                  <Accordion.Trigger className="flex w-full items-center justify-between p-6 text-left font-semibold hover:no-underline group">
+                  <Accordion.Trigger className="flex w-full items-center justify-between p-4 sm:p-6 text-left text-sm sm:text-base font-semibold hover:no-underline group">
                     {faq.question}
                     <svg
-                      className="w-5 h-5 transition-transform duration-200 group-data-[state=open]:rotate-180"
+                      className="w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-200 group-data-[state=open]:rotate-180"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -452,7 +454,7 @@ export function Home() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>
                   </Accordion.Trigger>
-                  <Accordion.Content className="px-6 pb-6 text-muted-foreground">
+                  <Accordion.Content className="px-4 pb-4 sm:px-6 sm:pb-6 text-sm sm:text-base text-muted-foreground">
                     {faq.answer}
                   </Accordion.Content>
                 </Card>
@@ -460,9 +462,9 @@ export function Home() {
             ))}
           </Accordion.Root>
 
-          <div className="text-center mt-8">
+          <div className="text-center mt-6 sm:mt-8">
             <Link to="/faq">
-              <Button variant="outline">View All FAQs</Button>
+              <Button variant="outline" className="text-xs sm:text-sm">View All FAQs</Button>
             </Link>
           </div>
         </div>
@@ -471,33 +473,33 @@ export function Home() {
       {/* Final CTA */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-[var(--accent-primary)] to-[var(--accent-primary-hover)]" />
-        <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32 text-center text-white">
+        <div className="relative container mx-auto px-6 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-32 text-center text-white">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="max-w-3xl mx-auto space-y-8"
+            className="max-w-3xl mx-auto space-y-5 sm:space-y-8"
           >
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold">
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold">
               Ready to Start Your Journey?
             </h2>
-            <p className="text-lg sm:text-xl text-white/90">
+            <p className="text-sm sm:text-xl text-white/90">
               Join the Team DNA BJJ family today and discover what you're truly capable of.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-row gap-3 sm:gap-4 justify-center">
               <Button 
-                size="lg" 
+                size="md" 
                 variant="secondary"
                 onClick={() => setTrialModalOpen(true)}
-                className="bg-white text-[var(--accent-primary)] hover:bg-white/90"
+                className="bg-white text-[var(--accent-primary)] hover:bg-white/90 text-xs sm:text-base px-3 py-2 sm:px-6 sm:py-3"
               >
                 Book Your Free Trial
               </Button>
               <Button 
-                size="lg" 
+                size="md" 
                 variant="outline"
-                className="border-white text-white hover:bg-white/10"
+                className="border-white text-white hover:bg-white/10 text-xs sm:text-base px-3 py-2 sm:px-6 sm:py-3"
                 onClick={() => window.location.href = '/contact'}
               >
                 Contact Us

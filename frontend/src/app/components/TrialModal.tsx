@@ -31,10 +31,10 @@ export function TrialModal({ open, onOpenChange }: TrialModalProps) {
     <Dialog.Root open={open} onOpenChange={onOpenChange}>
       <Dialog.Portal>
         <Dialog.Overlay className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0" />
-        <Dialog.Content className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-50 w-full max-w-lg">
-          <div className="bg-card rounded-2xl shadow-2xl p-6 md:p-8 max-h-[90vh] overflow-y-auto">
-            <div className="flex items-center justify-between mb-6">
-              <Dialog.Title className="text-2xl font-bold">
+        <Dialog.Content className="fixed inset-x-4 top-4 bottom-4 sm:inset-auto sm:left-1/2 sm:top-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2 z-50 sm:w-full sm:max-w-lg overflow-y-auto">
+          <div className="bg-card rounded-2xl shadow-2xl p-5 sm:p-6 md:p-8 w-full">
+            <div className="flex items-center justify-between mb-4 sm:mb-6">
+              <Dialog.Title className="text-xl sm:text-2xl font-bold">
                 Book Your Free Trial
               </Dialog.Title>
               <Dialog.Close asChild>
@@ -44,11 +44,11 @@ export function TrialModal({ open, onOpenChange }: TrialModalProps) {
               </Dialog.Close>
             </div>
 
-            <Dialog.Description className="text-muted-foreground mb-6">
+            <Dialog.Description className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6">
               Take the first step on your BJJ journey. Fill out the form below and we'll contact you to schedule your free trial class.
             </Dialog.Description>
 
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
               <Input
                 label="Full Name"
                 type="text"
@@ -82,7 +82,7 @@ export function TrialModal({ open, onOpenChange }: TrialModalProps) {
                 </label>
                 <select
                   className={cn(
-                    'w-full px-4 py-3 rounded-xl border-2 border-border bg-background',
+                    'w-full px-3 py-2.5 sm:px-4 sm:py-3 rounded-xl border-2 border-border bg-background text-sm sm:text-base',
                     'focus:outline-none focus:ring-2 focus:ring-[var(--accent-primary)] focus:border-transparent',
                     'transition-all duration-200'
                   )}
@@ -98,14 +98,14 @@ export function TrialModal({ open, onOpenChange }: TrialModalProps) {
                 </select>
               </div>
 
-              <div className="flex gap-3 pt-4">
-                <Button type="submit" size="lg" className="flex-1">
+              <div className="flex gap-3 pt-3 sm:pt-4">
+                <Button type="submit" size="md" className="flex-1">
                   Submit
                 </Button>
                 <Button 
                   type="button" 
                   variant="outline" 
-                  size="lg"
+                  size="md"
                   onClick={() => onOpenChange(false)}
                 >
                   Cancel
